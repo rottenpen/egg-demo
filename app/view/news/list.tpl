@@ -4,10 +4,12 @@
     <link rel="stylesheet" href="/public/css/news.css" />
   </head>
   <body>
+    <h1>{{ranking.title}}</h1>
     <ul class="news-view view">
-      {% for item in list %}
+      {% for item in ranking.books %}
         <li class="item">
-          <a href="{{ item.url }}">{{ item.title }}</a>
+          <a href="{{ item.author }}">{{ item.title }}</a>
+          <span>{{ helper.relativeTime(ranking.updated) }}</span>
         </li>
       {% endfor %}
     </ul>
